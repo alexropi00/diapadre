@@ -239,19 +239,19 @@ const memories = [
     src: "fotos/foto-1.jpg",
     alt: "Recuerdo familiar en Madrid",
     title: "Madrid en familia",
-    description: "Este marco está listo para enseñar ese recuerdo juntos por la ciudad.",
+    description: "Ya desde pequeños haciendo maravillosos viajes.",
   },
   {
     src: "fotos/foto-2.jpg",
     alt: "Recuerdo familiar frente a un edificio histórico",
     title: "Otra aventura juntos",
-    description: "Aquí irá otro momento especial para acompañar el mensaje del pergamino.",
+    description: "Y a día de hoy seguir haciendo esos viajes y muchísimos más.",
   },
   {
     src: "fotos/foto-3.jpg",
     alt: "Recuerdo de un paseo en barca entre risas",
     title: "Risas y recuerdos",
-    description: "El tercer hueco está preparado para cerrar la historia con una foto bonita.",
+    description: "Siempre consiguiendo maravillosos recuerdos a tu lado papá.",
   },
 ];
 
