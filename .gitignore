@@ -1,0 +1,4 @@
+fotos/*.jpg
+!fotos/foto-1.jpg
+!fotos/foto-2.jpg
+!fotos/foto-3.jpg
