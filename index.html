@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta
+      name="description"
+      content="Una aventura interactiva del Día del Padre con combate inspirado en Pokémon y un pergamino especial."
+    >
+    <title>Día del Padre | Pergamino Legendario</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="background" aria-hidden="true">
+      <div class="background__nebula background__nebula--left"></div>
+      <div class="background__nebula background__nebula--right"></div>
+      <div class="background__stars"></div>
+      <div class="background__floor"></div>
+    </div>
+
+    <main class="app-shell">
+      <header class="masthead">
+        <p class="eyebrow">Misión especial del Día del Padre</p>
+        <h1>Derrota a Charizard y consigue el pergamino legendario</h1>
+        <p class="lede">
+          Una mini aventura interactiva y pensada para móvil, creada para terminar con un mensaje muy
+          especial para papá.
+        </p>
+      </header>
+
+      <section class="stage stage--intro is-active" data-stage="intro">
+        <div class="panel panel--hero">
+          <div class="panel__copy">
+            <span class="chip">Combate épico</span>
+            <h2>El tesoro final guarda un mensaje para el mejor padre del mundo</h2>
+            <p>
+              Elige a tu compañero, entra en combate y gana para desbloquear un pergamino antiguo lleno de
+              cariño y recuerdos.
+            </p>
+            <button class="action action--primary" id="startAdventure" type="button">
+              Empezar aventura
+            </button>
+          </div>
+          <div class="panel__visual">
+            <div class="hero-medallion">
+              <div class="hero-medallion__core">VS</div>
+              <div class="hero-medallion__ring"></div>
+            </div>
+            <p class="hero-caption">
+              Raichu, Blastoise o Gengar contra un Charizard dispuesto a proteger el pergamino.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage stage--selection" data-stage="selection">
+        <div class="section-heading">
+          <span class="chip">Selección</span>
+          <h2>Escoge a tu Pokémon</h2>
+          <p>Cada uno tiene un estilo distinto, pero todos pueden ganar este combate.</p>
+        </div>
+
+        <div class="roster" id="roster"></div>
+
+        <div class="selection-footer panel panel--summary">
+          <div class="selection-preview" id="selectionPreview"></div>
+          <div class="selection-copy">
+            <p class="selection-copy__label">Compañero elegido</p>
+            <h3 id="selectedName">Raichu</h3>
+            <p id="selectedDescription"></p>
+            <button class="action action--primary" id="beginBattle" type="button">
+              Entrar en combate
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage stage--battle" data-stage="battle">
+        <div class="section-heading section-heading--tight">
+          <span class="chip chip--danger">Combate</span>
+          <h2>Charizard protege el pergamino</h2>
+          <p id="battleStatusLine">Turno 1. Elige un ataque para empezar.</p>
+        </div>
+
+        <div class="arena panel">
+          <article class="combatant combatant--enemy" id="enemyCombatant"></article>
+          <div class="arena__versus">
+            <div class="versus-badge">VS</div>
+            <p class="versus-note">Solo uno desbloqueará el tesoro</p>
+          </div>
+          <article class="combatant combatant--player" id="playerCombatant"></article>
+        </div>
+
+        <div class="battle-bottom">
+          <div class="move-panel panel">
+            <div class="move-panel__head">
+              <h3>Ataques</h3>
+              <p>Toca un movimiento para seguir el combate.</p>
+            </div>
+            <div class="move-grid" id="moveGrid"></div>
+            <button class="action action--ghost" id="backToSelection" type="button">
+              Cambiar de Pokémon
+            </button>
+          </div>
+
+          <div class="battle-log panel">
+            <div class="battle-log__head">
+              <h3>Relato del combate</h3>
+              <p id="battleRound">Turno 1</p>
+            </div>
+            <ul id="battleLog" aria-live="polite"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage stage--reward" data-stage="reward">
+        <div class="section-heading section-heading--reward">
+          <span class="chip chip--reward">Tesoro conseguido</span>
+          <h2>Has obtenido Pergamino</h2>
+          <p>Charizard ha sido debilitado. El mensaje secreto por fin puede abrirse.</p>
+        </div>
+
+        <div class="scroll-shell" id="scrollShell">
+          <div class="scroll-shell__seal">✨</div>
+          <article class="scroll">
+            <div class="scroll__rod scroll__rod--top"></div>
+            <div class="scroll__body">
+              <p class="scroll__intro">Pergamino del mejor padre del mundo</p>
+              <p class="scroll__message" id="letterMessage"></p>
+              <div class="memory-grid" id="memoryGrid"></div>
+            </div>
+            <div class="scroll__rod scroll__rod--bottom"></div>
+          </article>
+        </div>
+
+        <div class="reward-actions">
+          <button class="action action--primary" id="playAgain" type="button">
+            Volver a jugar
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <noscript>
+      <div class="noscript">
+        Esta página necesita JavaScript para mostrar la selección, el combate y el pergamino animado.
+      </div>
+    </noscript>
+
+    <script src="script.js"></script>
+  </body>
+</html>
